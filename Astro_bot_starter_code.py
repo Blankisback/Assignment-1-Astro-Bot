@@ -35,9 +35,9 @@ def get_api_key(prompt,hardcoded_key):
 # WEBEX FUNCTIONS
 # =========================
 def get_rooms(token):
-    url = #complete the URL to fetch rooms from Webex API
-    headers = #complete the headers dictionary to include the Authorization header with the token
-    response = #complete the request to get rooms using requests.get with the url and headers
+    url = "https://webexapis.com/v1/rooms"
+    headers = {"Authorization": token}
+    response = requests.get(url, headers=headers)
 
     if response.status_code != #complete the condition to check if the response status code is not xxx:
         print("Error fetching rooms:", response.status_code)
