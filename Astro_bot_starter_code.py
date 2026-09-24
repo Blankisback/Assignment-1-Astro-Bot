@@ -8,10 +8,10 @@
 # REQUIRED LIBRARIES
 # =========================
 
-import #complete the import statement to include the requests library
-import #complete the import statement to include the json library
-import #complete the import statement to include the time library
-from #complete the import statement to include the datetime library
+import requests
+import json
+import time
+from datetime import datetime
 
 # =========================
 # CONFIGURATION FUNCTIONS
@@ -24,8 +24,12 @@ def get_webex_token():
     else:
         return "Bearer YOUR_WEBEX_TOKEN"
 
-def get_api_key(prompt, hardcoded_key):
-  #complete the function to get the API key from user input or use a hardcoded key
+def get_api_key(prompt,hardcoded_key):
+    choice = input("Do you want to use the hard coded api key for {}? (y/n): ".format(prompt)).lower()
+    if choice == "n":
+        return input("Enter your {}: ".format(prompt))
+    else:
+        return hardcoded_key
 
 # =========================
 # WEBEX FUNCTIONS
